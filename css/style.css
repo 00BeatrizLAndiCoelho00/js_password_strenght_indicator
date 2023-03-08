@@ -1,0 +1,157 @@
+:root{
+    --fontColor: #171A21; 
+    --backgorundColor :  #D9D9D9;
+    --geralColor :#E8E8E8 ;
+    --inputDetails :#5f6a85;
+    --red: #E41134;
+    --orange:#EC5C27;
+    --green:#429541;
+}
+
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    display: grid;
+    height: 100%;
+    place-items: center;
+    text-align: center;
+    background-color: var(--backgorundColor) ;
+    color: #171A21;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+.container{
+    height: fit-content;
+    width: 30vw;
+    background-color: var(--geralColor);
+    padding: 1.5vw;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    
+}
+
+.container header{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 33px;
+}
+
+.container form{
+    margin: 3vh 1vh 1.5vh 1vh;
+}
+form .field{
+    height: 38px;
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+
+form .field input{
+    height: 100%;
+    width: 100%;
+    border: 1px solid var(--backgorundColor);
+    padding-left: 1vw;
+    outline: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+form .field input:focus{
+    border-color: var(--inputDetails);
+    box-shadow: inset 0 0 3px var(--);
+}
+
+form .field .showBtn{
+
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    display: none;
+
+}
+
+form .indicator{
+    height: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    display: none;
+}
+
+form .indicator span{
+    width: 100%;
+    height: 100%;
+    background-color: var(--backgorundColor);
+    border-radius: 5px;
+    position: relative;
+}
+
+form .indicator span.medium{
+    margin: 0 3px;
+}
+
+form .indicator span:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+  
+}
+
+form .indicator span.active.weak:before{
+    background-color: var(--red);
+}
+
+form .indicator span.active.medium:before{
+    background-color:  	var(--orange);
+}
+
+form .indicator span.active.strong:before{
+    background-color:  var(--green);
+}
+
+form .text{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: -10px;
+
+}
+
+form .text{
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: -10px;
+    display: none;
+}
+
+form .text.weak{
+    color: var(--red);
+}
+
+form .text.medium{
+    color: var(--orange);
+}
+
+
+form .text.strong{
+    color: var(--green);
+}
+
+
+
+
