@@ -21,7 +21,7 @@
 
         <form action="#">
             <div class="field">
-                <input onkeyup="trigger()" type="text" placeholder="Type passowrd">
+                <input onkeyup="trigger()" type="password" placeholder="Type passowrd">
                 <span class="showBtn" >SHOW</span>
             </div>
             <div class="indicator">
@@ -41,13 +41,17 @@
         const medium = document.querySelector(".medium");
         const strong = document.querySelector(".strong");
         const text = document.querySelector(".text");
+        const showBtn = document.querySelector(".showBtn");
 
         let regExpWeak = /[a-z]/;
         let regExpMedium = /\d+/;
         let regExpStrong = /.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/;
         
 
+        //FUNCTION TRIGGER ACTIVE THE THINGS WHEN THE USER DO SOMETHING
         function trigger(){
+
+            //THIS PART CHEKS HOW STRONG THE PASSWORD IS AND HOW TO SET THE BAR
             if(input.value != ""){
                 indicator.style.display = "block";
                 indicator.style.display = "flex";
@@ -91,13 +95,29 @@
                      text.classList.remove("remove")
                 }
 
+                //THIS TAKE CARE OF THE BUTTON AND SHOW (OR NOT) THE PASSWORD
+
+                showBtn.style.display = "block";
+                showBtn.onclick = function(){
+                    if(input.type == "password"){
+                        input.type = "text"
+                        showBtn.textContent = "HIDE"
+                    }else{
+                        input.type = "password"
+                        showBtn.textContent = "SHOW"
+                    }
+                }
+
             }else{
 
               indicator.style.display = "none";
                 text.style.display = "none";
+                showBtn.style.display = "none";
 
             }
         }
+
+
     </script>
 
 </body>
